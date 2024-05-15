@@ -25,6 +25,8 @@ import { countOpenAIChatPromptTokens } from "./countOpenAIChatMessageTokens";
 // https://platform.openai.com/docs/models
 // Open AI base chat models and their context window sizes.
 export const CHAT_MODEL_CONTEXT_WINDOW_SIZES = {
+  "gpt-4o": 128000,
+  "gpt-4-turbo": 128000,
   "gpt-4": 8192,
   "gpt-4-0314": 8192,
   "gpt-4-0613": 8192,

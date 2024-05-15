@@ -83,6 +83,8 @@ function getTiktokenBPE(
     case "gpt-4-32k":
     case "gpt-4-32k-0314":
     case "gpt-4-32k-0613":
+    case "gpt-4-turbo":
+    case "gpt-4o":
     case "text-embedding-3-small":
     case "text-embedding-3-large":
     case "text-embedding-ada-002": {
