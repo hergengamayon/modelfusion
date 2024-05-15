@@ -75,7 +75,13 @@ export function getOpenAIChatModelInformation(model: OpenAIChatModelType): {
   console.log("hrg baseModel: ", baseModel);
 
   if (
-    ["gpt-3.5-turbo", "gpt-3.5-turbo-0613", "gpt-4-0613"].includes(baseModel)
+    [
+      "gpt-3.5-turbo",
+      "gpt-3.5-turbo-0613",
+      "gpt-4-0613",
+      "gpt-4-turbo",
+      "gpt-4o",
+    ].includes(baseModel)
   ) {
     const contextWindowSize =
       CHAT_MODEL_CONTEXT_WINDOW_SIZES[
@@ -96,7 +102,9 @@ export function getOpenAIChatModelInformation(model: OpenAIChatModelType): {
 type FineTuneableOpenAIChatModelType =
   | `gpt-3.5-turbo`
   | `gpt-3.5-turbo-0613`
-  | `gpt-4-0613`;
+  | `gpt-4-0613`
+  | `gpt-4-turbo`
+  | `gpt-4o`;
 
 type FineTunedOpenAIChatModelType =
   `ft:${FineTuneableOpenAIChatModelType}:${string}:${string}:${string}`;
