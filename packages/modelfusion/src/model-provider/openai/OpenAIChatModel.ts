@@ -46,6 +46,11 @@ export const CHAT_MODEL_CONTEXT_WINDOW_SIZES = {
   "gpt-3.5-turbo-16k-0613": 16384,
 } as const;
 
+console.log(
+  "hrg CHAT_MODEL_CONTEXT_WINDOW_SIZES: ",
+  CHAT_MODEL_CONTEXT_WINDOW_SIZES
+);
+
 export function getOpenAIChatModelInformation(model: OpenAIChatModelType): {
   baseModel: OpenAIChatBaseModelType;
   isFineTuned: boolean;
@@ -67,6 +72,8 @@ export function getOpenAIChatModelInformation(model: OpenAIChatModelType): {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, baseModel, ___, ____, _____] = model.split(":");
 
+  console.log("hrg baseModel: ", baseModel);
+
   if (
     ["gpt-3.5-turbo", "gpt-3.5-turbo-0613", "gpt-4-0613"].includes(baseModel)
   ) {
@@ -82,7 +89,8 @@ export function getOpenAIChatModelInformation(model: OpenAIChatModelType): {
     };
   }
 
-  throw new Error(`Unknown OpenAI chat base model ${baseModel}.`);
+  // throw new Error(`Unknown OpenAI chat base model ${baseModel}.`);
+  throw new Error(`wala ni nga model nagexist: ${baseModel}.`);
 }
 
 type FineTuneableOpenAIChatModelType =
